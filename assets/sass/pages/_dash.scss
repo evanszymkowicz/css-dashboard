@@ -1,0 +1,246 @@
+.profile {
+  &__user {
+    text-align: center;
+
+    &::after {
+      content: '';
+      display: block;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      margin: 2rem 0;
+    }
+  }
+
+  &__img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background: url('../img/user.jpg');
+    background-size: cover;
+    background-position: 60%;
+    margin: 0 auto 1.5rem;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $Slate;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    color: $grey-dark-2;
+  }
+
+  &__education {
+    font-size: 1.1rem;
+
+    & > * {
+      display: inline-block;
+    }
+
+    &--title {
+      width: 27%;
+      color: $grey-dark-2;
+
+      span:first-of-type {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &--schools {
+      width: 70%;
+      color: $grey-dark-3;
+      font-weight: 700;
+
+      span:first-of-type {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.interview {
+  &__date {
+    font-size: 2.25rem;
+    color: $grey-dark-3;
+    padding: 1rem;
+    border-left: 4px solid $Melon;
+  }
+
+  .card__content {
+    padding: 0;
+
+    & > * {
+      padding: 0.5rem 4rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__job {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.1rem;
+
+    & > *:not(:last-child) {
+      margin-bottom: 7px;
+    }
+
+    :nth-child(odd) {
+      color: $grey-dark-2;
+    }
+
+    :nth-child(even) {
+      color: $grey-dark-3;
+      font-weight: 700;
+    }
+  }
+}
+
+.apply {
+  &__chart {
+    width: 100%;
+    height: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .card__content {
+    padding: 2rem;
+  }
+
+  &__legend {
+    white-space: nowrap;
+  }
+
+  &__key {
+    width: 31%;
+    display: inline-block;
+    position: relative;
+    padding-left: 6rem;
+    margin-right: 1%;
+
+    @include respond(tab-port) {
+      padding-left: 9rem;
+    }
+
+    &::before {
+      content: '';
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 4rem;
+      transform: translateY(-50%);
+
+      @include respond(tab-port) {
+        left: 7rem;
+      }
+    }
+
+    &--hired::before {
+      background-color: $Melon;
+    }
+
+    &--interviewed::before {
+      background-color: $lightPink;
+    }
+
+    &--rejected::before {
+      background-color: $main-red;
+    }
+  }
+
+  &__value {
+    display: block;
+    margin-bottom: 3px;
+    color: $grey-dark-3;
+    font-weight: 700;
+  }
+
+  &__label {
+    color: $grey-dark-2;
+  }
+}
+
+.jobs {
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 5px;
+  overflow-x: auto;
+
+  &__table {
+    width: 99.9%;
+    min-width: 80.5rem;
+    table-layout: fixed;
+  }
+
+  &__header {
+    th {
+      text-transform: uppercase;
+      text-align: left;
+      padding: 1.5rem 3rem;
+      background-color: $grey-light-2;
+      color: $grey-dark-2;
+      font-weight: 700;
+      vertical-align: middle;
+
+      &:nth-child(1) {
+        width: 30%;
+      }
+      &:nth-child(2) {
+        width: 23%;
+      }
+      &:nth-child(3) {
+        width: 22%;
+      }
+      &:nth-child(4) {
+        width: 15%;
+      }
+      &:nth-child(5) {
+        width: 10%;
+      }
+    }
+  }
+
+  &__body {
+    border-left: 1px solid $grey-light-2;
+    border-right: 1px solid $grey-light-2;
+  }
+
+  &__row {
+    background: #fff;
+    border-bottom: 1px solid $grey-light-2;
+    transition: background 0.3s ease-out;
+
+    &:hover {
+      background: $grey-light-1;
+    }
+
+    td {
+      @include truncate-text;
+      padding: 1.5rem 3rem;
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        color: $grey-dark-3;
+      }
+
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
+        color: $grey-dark-1;
+      }
+
+      a {
+        color: $grey-dark-1;
+      }
+    }
+  }
+}

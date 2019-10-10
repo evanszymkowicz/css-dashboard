@@ -1,0 +1,40 @@
+.icon {
+  display: inline-block;
+  color: $grey-light-1;
+  text-align: center;
+  vertical-align: middle;
+
+  &--small {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    font-size: 8px;
+    line-height: 1.75rem;
+    margin-right: 1rem;
+  }
+
+  &--big {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    margin-right: 1.5rem;
+  }
+
+  &--pink {
+    background-color: $lightPink;
+  }
+
+  &--blue {
+    background-color: $main-blue;
+  }
+
+  &--green {
+    background-color: $main-green;
+  }
+
+  &--red {
+    background-color: $main-red;
+  }
+}

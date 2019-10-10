@@ -1,0 +1,51 @@
+.cards {
+  min-height: 29rem;
+  position: relative;
+
+  &__card {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    @include respond(tab-port) {
+      position: relative;
+    }
+
+    &.col-1-of-3 {
+      &:first-child {
+        left: 0;
+      }
+
+      &:nth-child(2) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &:last-child {
+        right: 0;
+      }
+    }
+
+    & > * {
+      padding: 2rem;
+    }
+  }
+}
+
+.card {
+  &__heading {
+    font-size: 1.2rem;
+
+    & > * {
+      display: inline-block;
+      color: $grey-dark-3;
+    }
+
+    a {
+      float: right;
+    }
+  }
+}

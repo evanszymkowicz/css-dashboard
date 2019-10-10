@@ -1,0 +1,72 @@
+@mixin font-primary {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+}
+
+@mixin truncate-text {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    // 600px
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    // 900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    // 1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    // 1800px
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == small-height {
+    // 350px
+    @media only screen and (max-height: 21.875em) {
+      @content;
+    }
+  }
+}
+
+@mixin side-nav-width {
+  width: 7rem;
+
+  @include respond(big-desktop) {
+    width: 28rem;
+  }
+}
+
+@mixin side-nav-margin {
+  margin-left: 7rem;
+
+  @include respond(big-desktop) {
+    margin-left: 28rem;
+  }
+
+  @include respond(small-height) {
+    margin-left: 0;
+  }
+}

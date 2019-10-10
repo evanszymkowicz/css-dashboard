@@ -1,0 +1,12 @@
+.footer {
+  @include side-nav-margin;
+  padding: 4rem 5rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: $grey-dark-2;
+
+  a {
+    text-decoration: none;
+    color: $Slate;
+  }
+}

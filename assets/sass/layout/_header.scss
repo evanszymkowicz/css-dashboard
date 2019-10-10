@@ -1,0 +1,106 @@
+
+$header-valign-margin: 5px;
+
+header {
+  @include side-nav-margin;
+  padding: 1rem;
+  background: #fff;
+  font-size: 1.4rem;
+
+  .search {
+    width: 50%;
+    float: left;
+    position: relative;
+    top: $header-valign-margin;
+
+    .fa {
+      color: $grey-dark-1;
+      margin-right: 5px;
+      padding-left: 1rem;
+    }
+
+    input[type='text'] {
+      @include font-primary;
+      width: 80%;
+      background: transparent;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      color: $grey-dark-2;
+      padding: 1rem;
+      transition: all 0.3s ease-out;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $grey-light-1;
+      }
+
+      &::placeholder {
+        color: $grey-dark-1;
+      }
+    }
+  }
+
+  .user {
+    padding: 1rem;
+    float: right;
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+      color: $grey-dark-2;
+      padding-right: 2rem;
+      vertical-align: top;
+    }
+
+    &__add {
+      padding-top: $header-valign-margin;
+    }
+
+    &__avatar {
+      position: relative;
+
+      .fa {
+        position: absolute;
+        top: $header-valign-margin;
+        right: 7px;
+        color: $grey-dark-1;
+      }
+    }
+
+    &__image {
+      display: inline-block;
+      height: 2.25rem;
+      width: 2.25rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      background: url('../img/user.jpg');
+      background-size: cover;
+      background-position: 60%;
+    }
+
+    &__notification {
+      position: relative;
+      padding-top: $header-valign-margin;
+
+      &-count {
+        font-size: 0.65rem;
+        position: absolute;
+        top: 1px;
+        right: 1.7rem;
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: $Slate;
+        color: $grey-light-1;
+        text-align: center;
+        padding-top: 2px;
+      }
+    }
+  }
+}

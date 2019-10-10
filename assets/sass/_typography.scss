@@ -1,0 +1,16 @@
+body {
+  @include font-primary;
+}
+
+.heading {
+  &--main {
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    color: $main-blue;
+  }
+
+  &--sub {
+    font-size: 1.2rem;
+    color: $grey-dark-2;
+  }
+}

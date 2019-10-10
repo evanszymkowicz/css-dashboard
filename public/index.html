@@ -1,15 +1,237 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/main.css">
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
+
   <body>
-    <div id="app"></div>
-    <script src="/js/components/vendor.js"></script>
-    <script src="/js/components/firstComp.js"></script>
+
+    
+    <nav class="side-menu">
+      <div class="side-menu__logo"></div>
+      <ul>
+        <li class="side-menu__link">
+          <a href="#" class="active"><i class="fas fa-home"></i> <span class="side-menu__label">Home</span></a>
+          <span class="side-menu__tooltip">Home</span>
+        </li>
+        <li class="side-menu__link">
+          <a href="#"><i class="far fa-file-alt"></i> <span class="side-menu__label">Applied History</span></a>
+          <span class="side-menu__tooltip">Applied History</span>
+        </li>
+        <li class="side-menu__link">
+          <a href="#"><i class="far fa-bookmark"></i> <span class="side-menu__label">Jobs Bookmarks</span></a>
+          <span class="side-menu__tooltip">Jobs Bookmarks</span>
+        </li>
+        <li class="side-menu__link">
+          <a href="#"><i class="far fa-calendar-alt"></i> <span class="side-menu__label">Interview Schedule</span></a>
+          <span class="side-menu__tooltip">Interview Schedule</span>
+        </li>
+        <li class="side-menu__link">
+          <a href="#"><i class="far fa-user"></i> <span class="side-menu__label">Profile</span></a>
+          <span class="side-menu__tooltip">Profile</span>
+        </li>
+        <li class="side-menu__link">
+          <a href="#"><i class="fas fa-cog"></i> <span class="side-menu__label">Settings</span></a>
+          <span class="side-menu__tooltip">Settings</span>
+        </li>
+      </ul>
+    </nav>
+
+
+
+    <header>
+      <div class="row">
+        <div class="search">
+          <i class="fa fa-search"></i>
+          <input type="text" placeholder="Type here for search" />
+        </div>
+        <div class="user">
+          <a href="#" class="user__add">+ Add</a>
+          <a href="#" class="user__notification"
+            ><i class="far fa-bell"></i>
+            <span class="user__notification-count">3</span></a
+          >
+          <a href="#" class="user__avatar">
+            <div class="user__image"></div>
+            <i class="fa fa-caret-down"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+    <main>
+
+      <section class="row heading">
+        <h1 class="heading--main">Dashboard</h1>
+        <p class="heading--sub">Welcome to Gojobs job seeker dashboard</p>
+      </section>
+
+
+
+
+      <section class="row cards">
+        <div class="col-1-of-3 cards__card profile">
+          <div class="card__content">
+            <div class="profile__user">
+              <div class="profile__img"></div>
+              <p class="profile__name">Evan Szymkowicz</p>
+              <p class="profile__title">Front End Developer</p>
+            </div>
+            <div class="profile__education">
+              <div class="profile__education--title">
+                <span>Previous</span> <span>Education</span>
+              </div>
+              <div class="profile__education--schools">
+                <span>Deloitte Consulting, Ohio State</span>
+                <span>Stark University &ndash; IT Consultant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-1-of-3 cards__card interview">
+          <div class="card__heading">
+            <h2>Interview Schedule</h2>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="card__content">
+            <div class="interview__date">21 Jul, 2016</div>
+            <div class="interview__appointment">
+              <span class="icon icon--small icon--orange">OT</span>
+              <div class="interview__job">
+                <p>Online Travel & Ticketing Site</p>
+                <p class="interview__job-title">Senior UI/UX Designer</p>
+                <p>08:00 AM</p>
+              </div>
+            </div>
+            <div class="interview__appointment">
+              <span class="icon icon--small icon--blue">OS</span>
+              <div class="interview__job">
+                <p>Amazon Web Services</p>
+                <p class="interview__job-title">Senior UI/UX Designer</p>
+                <p>01:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-1-of-3 cards__card apply">
+          <div class="card__heading">
+            <h2>Application Status</h2>
+            <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+          </div>
+          <div class="card__content">
+            <canvas id="chart" class="apply__chart"></canvas>
+            <div class="apply__legend">
+              <div class="apply__key apply__key--hired">
+                <span class="apply__value">2 of 13</span>
+                <span class="apply__label">Hired</span>
+              </div>
+              <div class="apply__key apply__key--interviewed">
+                <span class="apply__value">4 of 13</span>
+                <span class="apply__label">Interviewed</span>
+              </div>
+              <div class="apply__key apply__key--rejected">
+                <span class="apply__value">5 of 13</span>
+                <span class="apply__label">Rejected</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="row jobs">
+        <table class="jobs__table">
+          <thead class="jobs__header">
+            <tr>
+              <th>Company</th>
+              <th>Jobs</th>
+              <th>End of Application</th>
+              <th>Location</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="jobs__body">
+            <tr class="jobs__row">
+              <td>
+                <span class="icon icon--big icon--blue">OS</span>
+                <span>Amazon Web Services</span>
+              </td>
+              <td>JavaScript Developer</td>
+              <td>27 Jun, 2016</td>
+              <td>Remote</td>
+              <td><a href="#"><i class="fas fa-ellipsis-h"></i></a></td>
+            </tr>
+            <tr class="jobs__row">
+              <td>
+                <span class="icon icon--big icon--green">DS</span>
+                <span>Digital Solutions Company</span>
+              </td>
+              <td>Backend Developer (Java or PHP)</td>
+              <td>24 Jun, 2016</td>
+              <td>Washington, D.C.</td>
+              <td><a href="#"><i class="fas fa-ellipsis-h"></i></a></i></td>
+            </tr>
+            <tr class="jobs__row">
+              <td>
+                <span class="icon icon--big icon--green">DS</span>
+                <span>Digital Solutions Company</span>
+              </td>
+              <td>JavaScript Developer</td>
+              <td>27 Jun, 2016</td>
+              <td>Washington, D.C.</td>
+              <td><a href="#"><i class="fas fa-ellipsis-h"></i></a></i></td>
+            </tr>
+            <tr class="jobs__row">
+              <td>
+                <span class="icon icon--big icon--orange">OT</span>
+                <span>Online Travel & Ticketing Site</span>
+              </td>
+              <td>UI/UX Designer</td>
+              <td>20 Jul, 2016</td>
+              <td>Washington, D.C.</td>
+              <td><a href="#"><i class="fas fa-ellipsis-h"></i></a></i></td>
+            </tr>
+            <tr class="jobs__row">
+              <td>
+                <span class="icon icon--big icon--indigo">MB</span>
+                <span>Digital Marketing Agency</span>
+              </td>
+              <td>JavaScript Developer</td>
+              <td>1 Aug, 2016</td>
+              <td>Denver, Colorado</td>
+              <td><a href="#"><i class="fas fa-ellipsis-h"></i></a></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+
+    <footer class="footer">
+      <div class="row">
+        &copy; 2019 Evan Szymkowicz</a>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="./js/components/vendor.js"></script>
+    <script src="./js/components/app.js"></script>
   </body>
 </html>
